@@ -1,0 +1,199 @@
+---
+title: "A deep learning approach for epilepsy seizure identification using electroencephalogram signals"
+author: "Sergio Jácobo-Zavaleta"
+date : "17/07/2022"
+margin : 0.05
+lang: es
+format: 
+  revealjs:
+    incremental: true
+    theme : [default,Custom.scss]
+    logo: logo.png
+    footer: "Programa de Investigación en Ingeniería Biomédica"
+      
+---
+# [Introducción]{.textWhite} {background-color=#ffc40c}
+
+## Datos epidemiológicos de la Epilepsia
+:::: {.columns}
+
+::: {.column width="50%"}
+- Cerca de 50 millones de todas las edades
+- Etiología múltiple
+  - Predisposición genética
+  - Meningitis/Encefalitis
+  - Trauma y tumores cerebrales
+  - Desórdenes degenerativos por la edad
+:::
+
+::: {.column width="50%"}
+- 660 000 pacientes epilépticos
+- 15% reciben tratemiento
+- 30% con posibilidad de cirugía
+- Agravado por:
+  - Neurocisticercosis
+  - Paludismo (Enf. endémica)
+:::
+
+::::
+
+---
+### Planteamiento del Problema
+>> ¿Será posible mediante técnicas de machine learning implementar un modelo para identificación de pacientes epilépticos?
+
+### Hipótesis
+>> Mediante redes neuronales y técnicas de deep learning se podrá identificar convulsiones epilépticas utilizando señales de electroencafalograma.
+
+# [Propuesta de solución]{.textWhite} {background-color=#39ff14}
+## Data Selection
+- [TUH EEG Seizure Corpus (Última versión 1.5.4)](https://quarto.org/docs/presentations/revealjs/themes.html){preview-link="true"}
+  - 675 personas, 1 643 sesiones, 1 475 horas (528        grab. contienen convulsiones)
+  - Data en European Data Format (EDF)
+  - Frecuencia de muestreo 250 Hz
+  - Sistema de electrodos 10/20, montaje bipolar          Temporal Central Parasagittal (TCP), 22 canales       EEG 
+
+## Preparación de los datos
+:::: {.columns}
+
+::: {.column width="60%"}
+#### Formulación de entrada
+![](Figuras/Figura1.png){height="450"}
+:::
+
+::: {.column width="40%" .fragment}
+#### Datos Ent/Val/Eva.
+![](Figuras/Figura2.png){height="460"}
+:::
+
+::::
+
+
+
+## Preparación de los datos
+#### Formulación de la entrada
+
+![](Figuras/Figura3a.png){.absolute top=200 left=150 width="350" height="300"}
+![](Figuras/Figura3b.png){.absolute top=250 left=500 width="350" height="300"}
+
+
+
+## Arquitecturas de las redes
+![](Figuras/modelsArquitecture1.png){.absolute top=100 left=0 height="500"}
+![](Figuras/modelsArquitecture2.png){.absolute top=200 left=530 height="300"}
+
+# [Resultados]{.textWhite}{background-color=#00ffff}
+## Métricas de rendimiento
+
+:::: {.columns}
+::: {.column width="50%"}
+#### Para los datos de entrenamiento y validación
+![](Figuras/metricsTrainVal.png){.absolute top=250 left=0 height="300"}
+:::
+
+::: {.column width="50%"}
+#### Para Evaluación
+- Evaluación simple
+![](Figuras/metricsEval1.png){height="150"}
+
+- Evaluación mixta
+![](Figuras/metricsEval2.png){height="150"}
+:::
+
+::::
+
+## Loss/Acc Entrenamiento + ROC + CM
+::: {.r-stack}
+![](Figuras/ConjuntoCurvas1.png){.fragment .absolute top=75 left=10}
+
+![](Figuras/ConjuntoCurvas2.png){.fragment .absolute top=75 left=10}
+
+![](Figuras/ConjuntoCurvas3.png){.fragment .absolute top=75 left=10}
+
+![](Figuras/ConjuntoCurvas4.png){.fragment .absolute top=75 left=10}
+
+![](Figuras/ConjuntoCurvas5.png){.fragment .absolute top=75 left=10}
+:::
+
+
+
+
+# Conclusiones{background-color=#ff1dce}
+
+ - El uso de modelos DL podrían automatizar la detección de convulsiones para mejorar el diagnóstico de epilpesia y disminuir la operador-dependencia por especialistas.
+ - El uso de mayor datos de entrenamiento podrían reducir el sobre ajuste de los datos y obtener mejor rendimiento para la predicción de nuevos datos.
+ - El uso de señales EEG y la correcta elección de la arquitectura de una red neuronal recurrente permiten identificar la presencia de señales epiléptiformes, independientemente de la duración y número de canales.
+
+<!-- 
+
+![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="401"}
+
+
+<https://quarto.org/docs/presentations/>. 
+
+::: {.incremental}
+- Eat spaghetti
+- Drink wine
+:::
+.title{font-size:20px}
+
+## Slide Title {.smaller}
+## Slide Title {.scrollable}
+Or doing it globally:
+    smaller: true
+    scrollable: true
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
+
+- Green ^[A footnote]
+
+General option : reference-location: document
+
+A particular slide footer
+::: footer
+Custom footer text
+:::
+
+## Slide Title {background-video="video.mp4" background-video-loop="true" background-video-muted="true"}
+
+## Slide Title {background-iframe="https://example.com"}
+
+Genaral setting
+preview-links: auto
+
+[Preview](https://example.com){preview-link="true"}
+
+[NoPreview](https://example.com){preview-link="false"}
+
+::: {.r-stack}
+![](image1.png){.fragment width="450" height="300"}
+
+![](image2.png){.fragment width="300" height="450"}
+
+![](image3.png){.fragment width="400" height="400"}
+:::
+
+::: {.r-fit-text}
+Big Text
+:::
+
+![](image.png){.r-stretch}
+auto-stretch: false
+## Slide Title {.nostretch}
+
+## {auto-animate=true}
+
+Animation
+
+## {auto-animate=true}
+
+Implicit
+
+Animation
+
+-->
