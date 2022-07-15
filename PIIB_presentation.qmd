@@ -103,15 +103,15 @@ format:
 
 ## Loss/Acc Entrenamiento + ROC + CM
 ::: {.r-stack}
-![](Figuras/ConjuntoCurvas1.png){.fragment .absolute top=75 left=10}
+![](Figuras/conjuntoCurvas1.png){.fragment .absolute top=75 left=10}
 
-![](Figuras/ConjuntoCurvas2.png){.fragment .absolute top=75 left=10}
+![](Figuras/conjuntoCurvas2.png){.fragment .absolute top=75 left=10}
 
-![](Figuras/ConjuntoCurvas3.png){.fragment .absolute top=75 left=10}
+![](Figuras/conjuntoCurvas3.png){.fragment .absolute top=75 left=10}
 
-![](Figuras/ConjuntoCurvas4.png){.fragment .absolute top=75 left=10}
+![](Figuras/conjuntoCurvas4.png){.fragment .absolute top=75 left=10}
 
-![](Figuras/ConjuntoCurvas5.png){.fragment .absolute top=75 left=10}
+![](Figuras/conjuntoCurvas5.png){.fragment .absolute top=75 left=10}
 :::
 
 
