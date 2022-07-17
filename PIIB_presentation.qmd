@@ -28,7 +28,7 @@ format:
 
 ::: {.column width="50%"}
 - 660 000 pacientes epilépticos
-- 15% reciben tratemiento
+- 15% reciben tratamiento
 - 30% con posibilidad de cirugía
 - Agravado por:
   - Neurocisticercosis
@@ -45,7 +45,7 @@ format:
 >> Mediante redes neuronales y técnicas de deep learning se podrá identificar convulsiones epilépticas utilizando señales de electroencafalograma.
 
 # [Propuesta de solución]{.textWhite} {background-color=#39ff14}
-## Data Selection
+## Selecci�n de datos
 - [TUH EEG Seizure Corpus (Última versión 1.5.4)](https://quarto.org/docs/presentations/revealjs/themes.html){preview-link="true"}
   - 675 personas, 1 643 sesiones, 1 475 horas (528        grab. contienen convulsiones)
   - Data en European Data Format (EDF)
