@@ -7,122 +7,123 @@ lang: es
 format: 
   revealjs:
     incremental: true
+    pdf-separate-fragments: true
     theme : [default,Custom.scss]
     logo: logo.png
     footer: "Programa de Investigación en Ingeniería Biomédica"
-      
 ---
-# [Introducción]{.textWhite} {background-color=#ffc40c}
+
+# [Introducción]{.textWhite} {background-color="#ffc40c"}
 
 ## Datos epidemiológicos de la Epilepsia
-:::: {.columns}
 
+::: columns
 ::: {.column width="50%"}
-- Cerca de 50 millones de todas las edades
-- Etiología múltiple
-  - Predisposición genética
-  - Meningitis/Encefalitis
-  - Trauma y tumores cerebrales
-  - Desórdenes degenerativos por la edad
+-   Cerca de 50 millones de todas las edades
+-   Etiología múltiple
+    -   Predisposición genética
+    -   Meningitis/Encefalitis
+    -   Trauma y tumores cerebrales
+    -   Desórdenes degenerativos por la edad
 :::
 
 ::: {.column width="50%"}
-- 660 000 pacientes epilépticos
-- 15% reciben tratamiento
-- 30% con posibilidad de cirugía
-- Agravado por:
-  - Neurocisticercosis
-  - Paludismo (Enf. endémica)
+-   660 000 pacientes epilépticos
+-   15% reciben tratamiento
+-   30% con posibilidad de cirugía
+-   Agravado por:
+    -   Neurocisticercosis
+    -   Paludismo (Enf. endémica)
+:::
 :::
 
-::::
+------------------------------------------------------------------------
 
----
 ### Planteamiento del Problema
->> ¿Será posible mediante técnicas de machine learning implementar un modelo para identificación de pacientes epilépticos?
+
+> > ¿Será posible mediante técnicas de machine learning implementar un modelo para identificación de pacientes epilépticos?
 
 ### Hipótesis
->> Mediante redes neuronales y técnicas de deep learning se podrá identificar convulsiones epilépticas utilizando señales de electroencafalograma.
 
-# [Propuesta de solución]{.textWhite} {background-color=#39ff14}
+> > Mediante redes neuronales y técnicas de deep learning se podrá identificar convulsiones epilépticas utilizando señales de electroencafalograma.
+
+# [Propuesta de solución]{.textWhite} {background-color="#39ff14"}
+
 ## Selección de datos
-- [TUH EEG Seizure Corpus (Última versión 1.5.4)](https://quarto.org/docs/presentations/revealjs/themes.html){preview-link="true"}
-  - 675 personas, 1 643 sesiones, 1 475 horas (528        grab. contienen convulsiones)
-  - Data en European Data Format (EDF)
-  - Frecuencia de muestreo 250 Hz
-  - Sistema de electrodos 10/20, montaje bipolar          Temporal Central Parasagittal (TCP), 22 canales       EEG 
+
+-   [TUH EEG Seizure Corpus (Última versión 1.5.4)](https://quarto.org/docs/presentations/revealjs/themes.html){preview-link="true"}
+    -   675 personas, 1 643 sesiones, 1 475 horas (528 grab. contienen convulsiones)
+    -   Data en European Data Format (EDF)
+    -   Frecuencia de muestreo 250 Hz
+    -   Sistema de electrodos 10/20, montaje bipolar Temporal Central Parasagittal (TCP), 22 canales EEG
 
 ## Preparación de los datos
-:::: {.columns}
 
+::: columns
 ::: {.column width="60%"}
 #### Formulación de entrada
+
 ![](Figuras/Figura1.png){height="450"}
 :::
 
-::: {.column width="40%" .fragment}
+::: {.column .fragment width="40%"}
 #### Datos Ent/Val/Eva.
+
 ![](Figuras/Figura2.png){height="460"}
 :::
-
-::::
-
-
+:::
 
 ## Preparación de los datos
+
 #### Formulación de la entrada
 
-![](Figuras/Figura3a.png){.absolute top=200 left=150 width="350" height="300"}
-![](Figuras/Figura3b.png){.absolute top=250 left=500 width="350" height="300"}
+![](Figuras/Figura3a.png){.absolute top="200" left="150" width="350" height="300"} ![](Figuras/Figura3b.png){.absolute top="250" left="500" width="350" height="300"}
 
+## Arquitectura de las redes
 
+![](Figuras/modelsArquitecture1.png){.absolute top="100" left="0" height="500"} ![](Figuras/modelsArquitecture2.png){.absolute top="200" left="530" height="300"}
 
-## Arquitecturas de las redes
-![](Figuras/modelsArquitecture1.png){.absolute top=100 left=0 height="500"}
-![](Figuras/modelsArquitecture2.png){.absolute top=200 left=530 height="300"}
+# [Resultados]{.textWhite} {background-color="#00ffff"}
 
-# [Resultados]{.textWhite}{background-color=#00ffff}
 ## Métricas de rendimiento
 
-:::: {.columns}
+::: columns
 ::: {.column width="50%"}
 #### Para los datos de entrenamiento y validación
-![](Figuras/metricsTrainVal.png){.absolute top=250 left=0 height="300"}
+
+![](Figuras/metricsTrainVal.png){.absolute top="250" left="0" height="300"}
 :::
 
 ::: {.column width="50%"}
 #### Para Evaluación
-- Evaluación simple
-![](Figuras/metricsEval1.png){height="150"}
 
-- Evaluación mixta
-![](Figuras/metricsEval2.png){height="150"}
+-   Evaluación simple ![](Figuras/metricsEval1.png){height="150"}
+
+-   Evaluación mixta ![](Figuras/metricsEval2.png){height="150"}
 :::
-
-::::
+:::
 
 ## Loss/Acc Entrenamiento + ROC + CM
-::: {.r-stack}
-![](Figuras/conjuntoCurvas1.png){.fragment .absolute top=75 left=10}
 
-![](Figuras/conjuntoCurvas2.png){.fragment .absolute top=75 left=10}
+::: r-stack
+![](Figuras/conjuntoCurvas1.png){.fragment .absolute top="75" left="10"}
 
-![](Figuras/conjuntoCurvas3.png){.fragment .absolute top=75 left=10}
+![](Figuras/conjuntoCurvas2.png){.fragment .absolute top="75" left="10"}
 
-![](Figuras/conjuntoCurvas4.png){.fragment .absolute top=75 left=10}
+![](Figuras/conjuntoCurvas3.png){.fragment .absolute top="75" left="10"}
 
-![](Figuras/conjuntoCurvas5.png){.fragment .absolute top=75 left=10}
+![](Figuras/conjuntoCurvas4.png){.fragment .absolute top="75" left="10"}
+
+![](Figuras/conjuntoCurvas5.png){.fragment .absolute top="75" left="10"}
 :::
 
+# Conclusiones {background-color="#ff1dce"}
 
+-   El uso de modelos DL podrán automatizar la detección de convulsiones para mejorar el diagnóstico de epilpesia y disminuir la operador-dependencia por especialistas.
+-   El uso de mayor datos de entrenamiento podrán reducir el sobre ajuste de los datos y obtener mejor rendimiento para la predicción de nuevos datos.
+-   El uso de señales EEG y la correcta elección de la arquitectura de una red neuronal recurrente permiten identificar la presencia de señales epileptiformes, independientemente de la duración y número de canales.
 
-
-# Conclusiones{background-color=#ff1dce}
-
- - El uso de modelos DL podrían automatizar la detección de convulsiones para mejorar el diagnóstico de epilpesia y disminuir la operador-dependencia por especialistas.
- - El uso de mayor datos de entrenamiento podrían reducir el sobre ajuste de los datos y obtener mejor rendimiento para la predicción de nuevos datos.
- - El uso de señales EEG y la correcta elección de la arquitectura de una red neuronal recurrente permiten identificar la presencia de señales epiléptiformes, independientemente de la duración y número de canales.
-
+```{=html}
 <!-- 
 
 ![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="401"}
@@ -197,3 +198,4 @@ Implicit
 Animation
 
 -->
+```
